@@ -21,6 +21,8 @@ Download the latest module from [GitHub](https://github.com/vmware-tanzu/communi
 
 ```shell
 $ curl -sSLO https://github.com/vmware-tanzu/community-edition/releases/download/v0.7.0-rc.4/tce-darwin-amd64-v0.7.0-rc.4.tar.gz
+$ tar xzvf tce-darwin-amd64-*
+$ rm tce-darwin-amd64-*.gz
 ```
 
 ## Installation
