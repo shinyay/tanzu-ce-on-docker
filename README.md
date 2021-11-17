@@ -86,7 +86,7 @@ $ docker pull kindest/haproxy:v20211115-b0f54c86
 ### 3. Create Management Cluster
 ```shell
 $ set -x MGMT_CLUSTER_NAME arthur
-$ tanzu management-cluster create -i docker --name ${MGMT_CLUSTER_NAME} -v 10 --plan dev --ceip-participation=false
+$ tanzu management-cluster create -i docker --name $MGMT_CLUSTER_NAME -v 10 --plan dev --ceip-participation=false
 ```
 
 ## References
