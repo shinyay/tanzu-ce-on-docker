@@ -186,7 +186,16 @@ $ tanzu cluster list --include-management-cluster
   arthur    tkg-system  running  1/1           1/1      v1.21.2+vmware.1  management  dev
 ```
 
+### 6. Configure Workload Cluster
+Configure kubeconfig for Workload Cluster
+```shell
+$ tanzu cluster kubeconfig get $WORKLOAD_CLUSTER_NAME --admin
+```
 
+Set kubectl context to Workload Cluster
+```shell
+$ kubectl config use-context $WORKLOAD_CLUSTER_NAME-admin@$WORKLOAD_CLUSTER_NAME
+```
 
 ## References
 
