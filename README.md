@@ -205,6 +205,28 @@ NAME                             STATUS   ROLES                  AGE   VERSION  
 lancelot-control-plane-dck47     Ready    control-plane,master   15m   v1.21.2+vmware.1-360497810732255795   172.18.0.6    <none>        Ubuntu 20.04 LTS   5.10.47-linuxkit   containerd://1.3.3-14-g449e9269
 lancelot-md-0-65446f8c69-zjt29   Ready    <none>                 15m   v1.21.2+vmware.1-360497810732255795   172.18.0.7    <none>        Ubuntu 20.04 LTS   5.10.47-linuxkit   containerd://1.3.3-14-g449e9269
 ```
+
+Default Pods
+```shell
+$ kubectl get pods -A
+
+NAMESPACE     NAME                                                     READY   STATUS    RESTARTS   AGE
+kube-system   antrea-agent-cxhlb                                       2/2     Running   0          13m
+kube-system   antrea-agent-shlwr                                       2/2     Running   0          13m
+kube-system   antrea-controller-5f444f5bd6-n2r26                       1/1     Running   0          13m
+kube-system   coredns-8dcb5c56b-6sxnl                                  1/1     Running   0          17m
+kube-system   coredns-8dcb5c56b-trq4v                                  1/1     Running   0          17m
+kube-system   etcd-lancelot-control-plane-dck47                        1/1     Running   0          17m
+kube-system   kube-apiserver-lancelot-control-plane-dck47              1/1     Running   0          17m
+kube-system   kube-controller-manager-lancelot-control-plane-dck47     1/1     Running   0          17m
+kube-system   kube-proxy-4lrvb                                         1/1     Running   0          17m
+kube-system   kube-proxy-qpbsp                                         1/1     Running   0          17m
+kube-system   kube-scheduler-lancelot-control-plane-dck47              1/1     Running   0          17m
+kube-system   metrics-server-5c78796cf6-sx2m2                          1/1     Running   0          13m
+tkg-system    kapp-controller-844d94b44d-tsh7s                         1/1     Running   0          17m
+tkg-system    tanzu-capabilities-controller-manager-69f58566d9-gk24r   1/1     Running   0          17m
+```
+
 ## References
 
 ## Licence
