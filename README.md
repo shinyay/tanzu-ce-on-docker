@@ -138,6 +138,39 @@ arthur-control-plane-gt88x    Ready    control-plane,master   32m   v1.21.2+vmwa
 arthur-md-0-74b864579-d976m   Ready    <none>                 31m   v1.21.2+vmware.1-360497810732255795   172.18.0.5    <none>        Ubuntu 20.04 LTS   5.10.47-linuxkit   containerd://1.3.3-14-g449e9269
 ```
 
+Default Pods
+```shell
+$ kubectl get pods -A
+
+NAMESPACE                           NAME                                                             READY   STATUS    RESTARTS   AGE
+capd-system                         capd-controller-manager-685f4d6876-wpgg5                         2/2     Running   0          26m
+capi-kubeadm-bootstrap-system       capi-kubeadm-bootstrap-controller-manager-84c75dd587-hnp5c       2/2     Running   0          26m
+capi-kubeadm-control-plane-system   capi-kubeadm-control-plane-controller-manager-756f646c68-l2wg4   2/2     Running   0          26m
+capi-system                         capi-controller-manager-5468bf8995-9vt6f                         2/2     Running   0          26m
+capi-webhook-system                 capi-controller-manager-b6f878dd8-hp7j6                          2/2     Running   0          26m
+capi-webhook-system                 capi-kubeadm-bootstrap-controller-manager-67cf557cc6-xc7ft       2/2     Running   0          26m
+capi-webhook-system                 capi-kubeadm-control-plane-controller-manager-798bb98b65-h768q   2/2     Running   0          26m
+cert-manager                        cert-manager-cainjector-59d5cd55f5-ljxwd                         1/1     Running   0          32m
+cert-manager                        cert-manager-fcbbdd748-l7vhh                                     1/1     Running   0          32m
+cert-manager                        cert-manager-webhook-5cd7cf5fbb-wp8ml                            1/1     Running   0          32m
+kube-system                         antrea-agent-mw2zl                                               2/2     Running   0          14m
+kube-system                         antrea-agent-r8t2n                                               2/2     Running   0          14m
+kube-system                         antrea-controller-549695d488-9qzdp                               1/1     Running   0          14m
+kube-system                         coredns-8dcb5c56b-bb75h                                          1/1     Running   0          32m
+kube-system                         coredns-8dcb5c56b-jz5t4                                          1/1     Running   0          32m
+kube-system                         etcd-arthur-control-plane-gt88x                                  1/1     Running   0          33m
+kube-system                         kube-apiserver-arthur-control-plane-gt88x                        1/1     Running   0          33m
+kube-system                         kube-controller-manager-arthur-control-plane-gt88x               1/1     Running   0          33m
+kube-system                         kube-proxy-84fpf                                                 1/1     Running   0          32m
+kube-system                         kube-proxy-lqqtg                                                 1/1     Running   0          32m
+kube-system                         kube-scheduler-arthur-control-plane-gt88x                        1/1     Running   0          33m
+kube-system                         metrics-server-c5fdd7488-r5qwb                                   1/1     Running   0          14m
+tkg-system                          kapp-controller-764fc6c69f-zf9w2                                 1/1     Running   0          31m
+tkg-system                          tanzu-addons-controller-manager-65dc965d99-hh96m                 1/1     Running   0          27m
+tkg-system                          tanzu-capabilities-controller-manager-69f58566d9-4tw9v           1/1     Running   0          32m
+tkr-system                          tkr-controller-manager-cc88b6968-mmx7f                           1/1     Running   1          32m
+```
+
 ## References
 
 ## Licence
