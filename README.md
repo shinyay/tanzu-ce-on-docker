@@ -1,6 +1,6 @@
 # Getting Started with Tanzu Community Edition on Docker
 
-Overview
+Tanzu Community Edition is a fully-featured, easy to manage, Kubernetes platform for learners and users.
 
 - [GitHub Repository](https://github.com/vmware-tanzu/community-edition/) 
 
@@ -16,8 +16,15 @@ Overview
 ## Requirement
 
 ## Usage
+### 1. Download Tanzu CLI
+Download the latest module from [GitHub](https://github.com/vmware-tanzu/community-edition/releases/)
+
+```shell
+$ curl -sSL https://github.com/vmware-tanzu/community-edition/releases/download/v0.7.0-rc.4/tce-darwin-amd64-v0.7.0-rc.4.tar.gz
+```
 
 ## Installation
+### 
 
 ## References
 
