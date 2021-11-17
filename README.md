@@ -1,4 +1,4 @@
-# Name
+# Getting Started with Tanzu Community Edition on Docker
 
 Overview
 
