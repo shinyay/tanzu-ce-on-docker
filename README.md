@@ -89,6 +89,35 @@ $ set -x MGMT_CLUSTER_NAME arthur
 $ tanzu management-cluster create -i docker --name $MGMT_CLUSTER_NAME -v 10 --plan dev --ceip-participation=false
 ```
 
+Confirmation
+```shell
+$ tanzu management-cluster get
+
+  NAME    NAMESPACE   STATUS   CONTROLPLANE  WORKERS  KUBERNETES        ROLES
+  arthur  tkg-system  running  1/1           1/1      v1.21.2+vmware.1  management
+
+
+Details:
+
+NAME                                                       READY  SEVERITY  REASON  SINCE  MESSAGE
+/arthur                                                    True                     10m
+├─ClusterInfrastructure - DockerCluster/arthur             True                     10m
+├─ControlPlane - KubeadmControlPlane/arthur-control-plane  True                     10m
+│ └─Machine/arthur-control-plane-gt88x                     True                     10m
+└─Workers
+  └─MachineDeployment/arthur-md-0
+    └─Machine/arthur-md-0-74b864579-d976m                  True                     10m
+
+
+Providers:
+
+  NAMESPACE                          NAME                   TYPE                    PROVIDERNAME  VERSION  WATCHNAMESPACE
+  capd-system                        infrastructure-docker  InfrastructureProvider  docker        v0.3.23
+  capi-kubeadm-bootstrap-system      bootstrap-kubeadm      BootstrapProvider       kubeadm       v0.3.23
+  capi-kubeadm-control-plane-system  control-plane-kubeadm  ControlPlaneProvider    kubeadm       v0.3.23
+  capi-system                        cluster-api            CoreProvider            cluster-api   v0.3.23
+```
+
 ## References
 
 ## Licence
