@@ -171,6 +171,11 @@ tkg-system                          tanzu-capabilities-controller-manager-69f585
 tkr-system                          tkr-controller-manager-cc88b6968-mmx7f                           1/1     Running   1          32m
 ```
 
+### 5. Create Workload Cluster
+```shell
+set -x WORKLOAD_CLUSTER_NAME lancelot
+tanzu cluster create $WORKLOAD_CLUSTER_NAME -v 10 --plan dev
+```
 ## References
 
 ## Licence
