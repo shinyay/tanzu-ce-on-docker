@@ -125,6 +125,9 @@ $ tanzu management-cluster kubeconfig get $MGMT_CLUSTER_NAME --admin
 ```
 
 Set kubectl context to Management Cluster
+```shell
+$ kubectl config use-context $MGMT_CLUSTER_NAME-admin@$MGMT_CLUSTER_NAME
+```
 
 ## References
 
