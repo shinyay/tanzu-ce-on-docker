@@ -227,6 +227,25 @@ tkg-system    kapp-controller-844d94b44d-tsh7s                         1/1     R
 tkg-system    tanzu-capabilities-controller-manager-69f58566d9-gk24r   1/1     Running   0          17m
 ```
 
+### 7. Confirm Docker Containers
+- 2 Clusters: `Management Cluster` and `Workload Cluster`
+- each cluster has
+  - `Control Plane`
+  - `Worker Node`
+  - `HA Proxy` as a Loadbalancer for the control plane
+
+```shell
+$ docker ps
+
+CONTAINER ID   IMAGE                                                             COMMAND                  CREATED             STATUS             PORTS                                  NAMES
+73c2f2622d89   projects-stg.registry.vmware.com/tkg/kind/node:v1.21.2_vmware.1   "/usr/local/bin/entr…"   26 minutes ago      Up 26 minutes                                             lancelot-md-0-65446f8c69-zjt29
+60624257d87b   projects-stg.registry.vmware.com/tkg/kind/node:v1.21.2_vmware.1   "/usr/local/bin/entr…"   27 minutes ago      Up 27 minutes      46347/tcp, 127.0.0.1:46347->6443/tcp   lancelot-control-plane-dck47
+d947cbe97fb7   kindest/haproxy:v20210715-a6da3463                                "haproxy -sf 7 -W -d…"   27 minutes ago      Up 27 minutes      44073/tcp, 0.0.0.0:44073->6443/tcp     lancelot-lb
+dd9e31b34ef0   projects-stg.registry.vmware.com/tkg/kind/node:v1.21.2_vmware.1   "/usr/local/bin/entr…"   About an hour ago   Up About an hour                                          arthur-md-0-74b864579-d976m
+845eef7ae583   projects-stg.registry.vmware.com/tkg/kind/node:v1.21.2_vmware.1   "/usr/local/bin/entr…"   About an hour ago   Up About an hour   41765/tcp, 127.0.0.1:41765->6443/tcp   arthur-control-plane-gt88x
+d390fad9250b   kindest/haproxy:v20210715-a6da3463                                "haproxy -sf 7 -W -d…"   About an hour ago   Up About an hour   41941/tcp, 0.0.0.0:41941->6443/tcp     arthur-lb
+```
+
 ## References
 
 ## Licence
