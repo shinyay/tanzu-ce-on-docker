@@ -2,6 +2,8 @@
 
 Overview
 
+- [GitHub Repository](https://github.com/vmware-tanzu/community-edition/) 
+
 ## Description
 
 ## Demo
