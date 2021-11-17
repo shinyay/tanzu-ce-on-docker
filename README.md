@@ -176,6 +176,18 @@ tkr-system                          tkr-controller-manager-cc88b6968-mmx7f      
 $ set -x WORKLOAD_CLUSTER_NAME lancelot
 $ tanzu cluster create $WORKLOAD_CLUSTER_NAME --plan dev
 ```
+
+Confirmation
+```shell
+$ tanzu cluster list --include-management-cluster
+
+  NAME      NAMESPACE   STATUS   CONTROLPLANE  WORKERS  KUBERNETES        ROLES       PLAN
+  lancelot  default     running  1/1           1/1      v1.21.2+vmware.1  <none>      dev
+  arthur    tkg-system  running  1/1           1/1      v1.21.2+vmware.1  management  dev
+```
+
+
+
 ## References
 
 ## Licence
