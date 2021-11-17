@@ -16,6 +16,8 @@ Tanzu Community Edition is a fully-featured, easy to manage, Kubernetes platform
 ## Requirement
 
 ## Usage
+
+## Installation
 ### 1. Download Tanzu CLI
 Download the latest module from [GitHub](https://github.com/vmware-tanzu/community-edition/releases/)
 
@@ -71,8 +73,16 @@ Available command groups:
     version                 Version information
 ```
 
-## Installation
-### 
+### 2. Prepare for Installation
+Retrieve the Load Balancer (HA Proxy) from Docker Hub in advance to prevent from Docker Hub Rate limiting
+
+Download the latest tag
+- [kindest/haproxy](https://hub.docker.com/r/kindest/haproxy)
+
+```shell
+$ docker pull kindest/haproxy:v20211115-b0f54c86
+```
+
 
 ## References
 
