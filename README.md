@@ -118,6 +118,12 @@ Providers:
   capi-system                        cluster-api            CoreProvider            cluster-api   v0.3.23
 ```
 
+### 4. Configure Management Cluster
+Configure kubeconfig for Management Cluster
+```shell
+$ tanzu management-cluster kubeconfig get $MGMT_CLUSTER_NAME --admin
+```
+
 ## References
 
 ## Licence
