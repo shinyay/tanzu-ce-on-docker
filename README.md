@@ -197,6 +197,14 @@ Set kubectl context to Workload Cluster
 $ kubectl config use-context $WORKLOAD_CLUSTER_NAME-admin@$WORKLOAD_CLUSTER_NAME
 ```
 
+Node
+```shell
+$ kubectl get node -o wide
+
+NAME                             STATUS   ROLES                  AGE   VERSION                               INTERNAL-IP   EXTERNAL-IP   OS-IMAGE           KERNEL-VERSION     CONTAINER-RUNTIME
+lancelot-control-plane-dck47     Ready    control-plane,master   15m   v1.21.2+vmware.1-360497810732255795   172.18.0.6    <none>        Ubuntu 20.04 LTS   5.10.47-linuxkit   containerd://1.3.3-14-g449e9269
+lancelot-md-0-65446f8c69-zjt29   Ready    <none>                 15m   v1.21.2+vmware.1-360497810732255795   172.18.0.7    <none>        Ubuntu 20.04 LTS   5.10.47-linuxkit   containerd://1.3.3-14-g449e9269
+```
 ## References
 
 ## Licence
