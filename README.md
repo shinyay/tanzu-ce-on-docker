@@ -25,6 +25,12 @@ $ tar xzvf tce-darwin-amd64-*
 $ rm tce-darwin-amd64-*.gz
 ```
 
+Install Tanzu CLI
+```shell
+$ tce-darwin-amd64-*/install.sh
+```
+
+
 ## Installation
 ### 
 
