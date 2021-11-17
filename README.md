@@ -30,6 +30,14 @@ Install Tanzu CLI
 $ tce-darwin-amd64-*/install.sh
 ```
 
+Confirmation
+```shell
+$ tanzu version
+
+version: v1.4.0-pre-alpha-2
+buildDate: 2021-08-18
+sha: ab30672
+```
 
 ## Installation
 ### 
