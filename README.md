@@ -264,6 +264,14 @@ $ tanzu package available list -A
   vsphere-csi.tanzu.vmware.com                        vsphere-csi                        vSphere CSI provider                                                                                                                                                                                    tkg-system
 ```
 
+List installed packages
+```shell
+$ tanzu package installed list -A
+
+  NAME            PACKAGE-NAME                     PACKAGE-VERSION  STATUS               NAMESPACE
+  antrea          antrea.tanzu.vmware.com                           Reconcile succeeded  tkg-system
+  metrics-server  metrics-server.tanzu.vmware.com                   Reconcile succeeded  tkg-system
+```
 
 ## References
 
