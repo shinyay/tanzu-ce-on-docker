@@ -39,6 +39,38 @@ buildDate: 2021-08-18
 sha: ab30672
 ```
 
+#### Tanzu CLI
+```shell
+$ tanzu -h
+
+Tanzu CLI
+
+Usage:
+  tanzu [command]
+
+Available command groups:
+
+  Admin
+    builder                 Build Tanzu components
+
+  Run
+    cluster                 Kubernetes cluster operations
+    conformance             Run Sonobuoy conformance tests against clusters
+    kubernetes-release      Kubernetes release operations
+    management-cluster      Kubernetes management cluster operations
+    package                 Tanzu package management
+    standalone-cluster      Create clusters without a dedicated management cluster
+
+  System
+    completion              Output shell completion code
+    config                  Configuration for the CLI
+    init                    Initialize the CLI
+    login                   Login to the platform
+    plugin                  Manage CLI plugins
+    update                  Update the CLI
+    version                 Version information
+```
+
 ## Installation
 ### 
 
