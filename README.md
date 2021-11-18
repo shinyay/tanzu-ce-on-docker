@@ -294,6 +294,10 @@ $ tanzu package repository list -A
 #### Local Path Storage
 - [Local Path Storage - v0.0.20 ¶](https://tanzucommunityedition.io/docs/latest/package-readme-local-path-storage-0.0.20/)
 
+|Value|Required/Optional|Description|
+|-----|-----------------|-----------|
+|namespace|Required|The namespace to deploy the local-path-storage pods|
+
 
 ### Delete Workload Cluster
 ```shell
