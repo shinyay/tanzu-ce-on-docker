@@ -340,6 +340,14 @@ tkg-system                 kapp-controller-866cb85b86-v28dk                     
 tkg-system                 tanzu-capabilities-controller-manager-69f58566d9-r9t4q              1/1     Running   1          5h47m
 ```
 
+Confirm Resource
+```shell
+$ kubectl get storageclass  
+
+NAME                   PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  4m21s
+```
+
 ### Delete Workload Cluster
 ```shell
 $ tanzu cluster delete $WORKLOAD_CLUSTER_NAME -y
