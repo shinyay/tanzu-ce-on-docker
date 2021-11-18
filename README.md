@@ -210,6 +210,8 @@ lancelot-control-plane-dck47     Ready    control-plane,master   15m   v1.21.2+v
 lancelot-md-0-65446f8c69-zjt29   Ready    <none>                 15m   v1.21.2+vmware.1-360497810732255795   172.18.0.7    <none>        Ubuntu 20.04 LTS   5.10.47-linuxkit   containerd://1.3.3-14-g449e9269
 ```
 
+![3-cluster-config](https://user-images.githubusercontent.com/3072734/142356086-fe47ec1a-d751-4793-8859-366c1aa073e0.gif)
+
 Default Pods
 ```shell
 $ kubectl get pods -A
