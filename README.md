@@ -349,6 +349,10 @@ local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsu
 ```
 
 ### 9. MetalLB
+MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
+
+- [MetalLB](https://github.com/metallb/metallb)
+
 The necessary manifests for MetalLB
 ```
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/namespace.yaml
