@@ -361,6 +361,9 @@ $ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/man
 ```
 
 ConfigMap for MetalLB
+
+IP Range should be 172.18.0.0/16
+
 ```shell
 string trim '
 apiVersion: v1
