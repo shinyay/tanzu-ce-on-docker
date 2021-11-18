@@ -280,6 +280,17 @@ $ tanzu package repository add tce-repo \
   --namespace tanzu-package-repo-global
 ```
 
+
+### Delete Workload Cluster
+```shell
+$ tanzu cluster delete $WORKLOAD_CLUSTER_NAME -y
+```
+
+### Delete Management Cluster
+```shell
+$ tanzu management-cluster delete $MGMT_CLUSTER_NAME -y
+```
+
 ## References
 
 ## Licence
