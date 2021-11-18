@@ -380,7 +380,7 @@ data:
       - 172.18.0.150-172.18.0.200
 ' > metallb-config.yaml
 
-$ kubectl create -f metallb-config.yaml
+$ kubectl apply -f metallb-config.yaml
 ```
 
 ### Delete Workload Cluster
