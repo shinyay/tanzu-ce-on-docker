@@ -89,6 +89,8 @@ $ set -x MGMT_CLUSTER_NAME arthur
 $ tanzu management-cluster create -i docker --name $MGMT_CLUSTER_NAME -v 10 --plan dev --ceip-participation=false
 ```
 
+![1-create-mgmt-cluster](https://user-images.githubusercontent.com/3072734/142351724-f3cbde50-b8d3-417f-a94a-c1a84e00fbca.gif)
+
 Confirmation
 ```shell
 $ tanzu management-cluster get
@@ -176,6 +178,8 @@ tkr-system                          tkr-controller-manager-cc88b6968-mmx7f      
 $ set -x WORKLOAD_CLUSTER_NAME lancelot
 $ tanzu cluster create $WORKLOAD_CLUSTER_NAME --plan dev
 ```
+
+![2-create-work-cluster](https://user-images.githubusercontent.com/3072734/142355024-30bd6cb7-c63e-4a13-a355-30982d954e92.gif)
 
 Confirmation
 ```shell
