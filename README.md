@@ -318,6 +318,28 @@ $ tanzu package installed list -A
   metrics-server      metrics-server.tanzu.vmware.com                                 Reconcile succeeded  tkg-system
 ```
 
+List Pods
+```shell
+$ kubectl get pods -A
+
+NAMESPACE                  NAME                                                                READY   STATUS    RESTARTS   AGE
+kube-system                antrea-agent-4sfnr                                                  2/2     Running   0          5h43m
+kube-system                antrea-agent-lzzjc                                                  2/2     Running   0          5h43m
+kube-system                antrea-controller-5dc4698767-2ftnt                                  1/1     Running   0          5h43m
+kube-system                coredns-8dcb5c56b-mdcs5                                             1/1     Running   0          5h47m
+kube-system                coredns-8dcb5c56b-w2d9f                                             1/1     Running   0          5h47m
+kube-system                etcd-yanashin-work-cluster-control-plane-slksz                      1/1     Running   0          5h47m
+kube-system                kube-apiserver-yanashin-work-cluster-control-plane-slksz            1/1     Running   0          5h47m
+kube-system                kube-controller-manager-yanashin-work-cluster-control-plane-slksz   1/1     Running   1          5h47m
+kube-system                kube-proxy-k7gdk                                                    1/1     Running   0          5h46m
+kube-system                kube-proxy-p48m7                                                    1/1     Running   0          5h47m
+kube-system                kube-scheduler-yanashin-work-cluster-control-plane-slksz            1/1     Running   1          5h47m
+kube-system                metrics-server-5895b667b4-mrjm2                                     1/1     Running   0          5h43m
+tanzu-local-path-storage   local-path-provisioner-7dcb6d6b98-hv8kl                             1/1     Running   0          3m11s
+tkg-system                 kapp-controller-866cb85b86-v28dk                                    1/1     Running   0          5h47m
+tkg-system                 tanzu-capabilities-controller-manager-69f58566d9-r9t4q              1/1     Running   1          5h47m
+```
+
 ### Delete Workload Cluster
 ```shell
 $ tanzu cluster delete $WORKLOAD_CLUSTER_NAME -y
