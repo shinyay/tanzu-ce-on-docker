@@ -348,6 +348,14 @@ NAME                   PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE
 local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  4m21s
 ```
 
+### 9. MetalLB
+The necessary manifests for MetalLB
+```
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/namespace.yaml
+kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/metallb.yaml
+```
+
 ### Delete Workload Cluster
 ```shell
 $ tanzu cluster delete $WORKLOAD_CLUSTER_NAME -y
