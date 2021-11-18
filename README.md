@@ -365,7 +365,7 @@ ConfigMap for MetalLB
 IP Range should be 172.18.0.0/16
 
 ```shell
-string trim '
+$ string trim '
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -379,7 +379,8 @@ data:
       addresses:
       - 172.18.0.150-172.18.0.200
 ' > metallb-config.yaml
-kubectl create -f metallb-config.yaml
+
+$ kubectl create -f metallb-config.yaml
 ```
 
 ### Delete Workload Cluster
