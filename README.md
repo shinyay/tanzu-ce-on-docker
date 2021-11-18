@@ -286,6 +286,11 @@ $ tanzu package repository add tce-repo \
   --namespace tanzu-package-repo-global
 ```
 
+Confirm the Package Repository
+```shell
+$ tanzu package repository list -A
+```
+
 
 ### Delete Workload Cluster
 ```shell
