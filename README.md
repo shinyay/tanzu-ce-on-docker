@@ -298,6 +298,11 @@ $ tanzu package repository list -A
 |-----|-----------------|-----------|
 |namespace|Required|The namespace to deploy the local-path-storage pods|
 
+Prepare for installation
+```shell
+$ kubectl create ns tce-package
+```
+
 
 ### Delete Workload Cluster
 ```shell
