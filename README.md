@@ -308,6 +308,16 @@ Install Local Path Storage
 $ tanzu package install local-path-storage --package-name local-path-storage.community.tanzu.vmware.com -v 0.0.20 -n tce-package
 ```
 
+List Packages
+```shell
+$ tanzu package installed list -A
+
+  NAME                PACKAGE-NAME                                   PACKAGE-VERSION  STATUS               NAMESPACE
+  local-path-storage  local-path-storage.community.tanzu.vmware.com  0.0.20           Reconcile succeeded  tce-package
+  antrea              antrea.tanzu.vmware.com                                         Reconcile succeeded  tkg-system
+  metrics-server      metrics-server.tanzu.vmware.com                                 Reconcile succeeded  tkg-system
+```
+
 ### Delete Workload Cluster
 ```shell
 $ tanzu cluster delete $WORKLOAD_CLUSTER_NAME -y
