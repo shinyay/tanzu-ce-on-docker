@@ -291,6 +291,9 @@ Confirm the Package Repository
 $ tanzu package repository list -A
 ```
 
+#### Local Path Storage
+- [Local Path Storage - v0.0.20 ¶](https://tanzucommunityedition.io/docs/latest/package-readme-local-path-storage-0.0.20/)
+
 
 ### Delete Workload Cluster
 ```shell
