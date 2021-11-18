@@ -303,6 +303,10 @@ Prepare for installation
 $ kubectl create ns tce-package
 ```
 
+Install Local Path Storage
+```shell
+$ tanzu package install local-path-storage --package-name local-path-storage.community.tanzu.vmware.com -v 0.0.20 -n tce-package
+```
 
 ### Delete Workload Cluster
 ```shell
