@@ -400,6 +400,7 @@ $ tanzu management-cluster delete $MGMT_CLUSTER_NAME -y
 ## References
 
 - [Getting Started with Tanzu Community Edition](https://tanzucommunityedition.io/docs/latest/getting-started/)
+- [MetalLB](https://metallb.universe.tf/)
 
 ## Licence
 
