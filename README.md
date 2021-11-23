@@ -5,6 +5,9 @@ Tanzu Community Edition is a fully-featured, easy to manage, Kubernetes platform
 - [GitHub Repository](https://github.com/vmware-tanzu/community-edition/) 
 
 ## Description
+In this procedure, you will do the following:
+- Installing Tanzu CLI
+- 
 
 ## Demo
 
