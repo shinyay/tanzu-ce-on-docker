@@ -7,7 +7,8 @@ Tanzu Community Edition is a fully-featured, easy to manage, Kubernetes platform
 ## Description
 In this procedure, you will do the following:
 - Installing Tanzu CLI
-- 
+- Creating a Management Cluster
+- Creating a Workload Cluster
 
 ## Demo
 
