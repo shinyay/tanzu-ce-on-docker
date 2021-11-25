@@ -161,9 +161,9 @@ Node
 ```shell
 $ kubectl get nodes -o wide
 
-NAME                          STATUS   ROLES                  AGE   VERSION                               INTERNAL-IP   EXTERNAL-IP   OS-IMAGE           KERNEL-VERSION     CONTAINER-RUNTIME
-arthur-control-plane-gt88x    Ready    control-plane,master   32m   v1.21.2+vmware.1-360497810732255795   172.18.0.4    <none>        Ubuntu 20.04 LTS   5.10.47-linuxkit   containerd://1.3.3-14-g449e9269
-arthur-md-0-74b864579-d976m   Ready    <none>                 31m   v1.21.2+vmware.1-360497810732255795   172.18.0.5    <none>        Ubuntu 20.04 LTS   5.10.47-linuxkit   containerd://1.3.3-14-g449e9269
+NAME                         STATUS   ROLES                  AGE   VERSION                               INTERNAL-IP   EXTERNAL-IP   OS-IMAGE           KERNEL-VERSION     CONTAINER-RUNTIME
+mgmt-control-plane-mglw6     Ready    control-plane,master   32m   v1.21.2+vmware.1-360497810732255795   172.18.0.4    <none>        Ubuntu 20.04 LTS   5.10.47-linuxkit   containerd://1.3.3-14-g449e9269
+mgmt-md-0-595ff89958-8cskm   Ready    <none>                 31m   v1.21.2+vmware.1-360497810732255795   172.18.0.5    <none>        Ubuntu 20.04 LTS   5.10.47-linuxkit   containerd://1.3.3-14-g449e9269
 ```
 
 Default Pods
