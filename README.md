@@ -203,7 +203,7 @@ tkr-system                          tkr-controller-manager-cc88b6968-6xlwz      
 ### 5. Create Workload Cluster
 
 ```shell
-$ set -x WORKLOAD_CLUSTER_NAME lancelot
+$ set -x WORKLOAD_CLUSTER_NAME workload
 $ tanzu cluster create $WORKLOAD_CLUSTER_NAME --plan dev
 ```
 
