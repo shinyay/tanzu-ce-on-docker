@@ -2,10 +2,12 @@
 
 Tanzu Community Edition is a fully-featured, easy to manage, Kubernetes platform for learners and users.
 
-- [GitHub Repository](https://github.com/vmware-tanzu/community-edition/) 
+- [GitHub Repository](https://github.com/vmware-tanzu/community-edition/)
 
 ## Description
+
 In this procedure, you will do the following:
+
 - [Installing Tanzu CLI](#1-download-tanzu-cli)
 - [Creating a Management Cluster](#3-create-management-cluster)
 - [Creating a Workload Cluster](#5-create-workload-cluster)
@@ -18,6 +20,7 @@ In this procedure, you will do the following:
 - feature:2
 
 ## Requirement
+
 - RAM: 6 GB
 - CPU: 2
 - [Docker Desktop for Mac](https://docs.docker.com/desktop/mac/install/)
@@ -26,7 +29,9 @@ In this procedure, you will do the following:
 ## Usage
 
 ## Installation
+
 ### 1. Download Tanzu CLI
+
 Download the latest module from [GitHub](https://github.com/vmware-tanzu/community-edition/releases/)
 
 ```shell
@@ -36,11 +41,13 @@ $ rm tce-darwin-amd64-*.gz
 ```
 
 Install Tanzu CLI
+
 ```shell
 $ tce-darwin-amd64-*/install.sh
 ```
 
 Confirmation
+
 ```shell
 $ tanzu version
 
@@ -50,6 +57,7 @@ sha: ab30672
 ```
 
 #### Tanzu CLI
+
 ```shell
 $ tanzu -h
 
@@ -82,9 +90,11 @@ Available command groups:
 ```
 
 ### 2. Prepare for Installation
+
 Retrieve the Load Balancer (HA Proxy) from Docker Hub in advance to prevent from Docker Hub Rate limiting
 
 Download the latest tag
+
 - [kindest/haproxy](https://hub.docker.com/r/kindest/haproxy)
 
 ```shell
@@ -92,6 +102,7 @@ $ docker pull kindest/haproxy:v20211115-b0f54c86
 ```
 
 ### 3. Create Management Cluster
+
 ```shell
 $ set -x MGMT_CLUSTER_NAME arthur
 $ tanzu management-cluster create -i docker --name $MGMT_CLUSTER_NAME -v 10 --plan dev --ceip-participation=false
@@ -100,6 +111,7 @@ $ tanzu management-cluster create -i docker --name $MGMT_CLUSTER_NAME -v 10 --pl
 ![1-create-mgmt-cluster](https://user-images.githubusercontent.com/3072734/142351724-f3cbde50-b8d3-417f-a94a-c1a84e00fbca.gif)
 
 Confirmation
+
 ```shell
 $ tanzu management-cluster get
 
@@ -129,17 +141,21 @@ Providers:
 ```
 
 ### 4. Configure Management Cluster
+
 Configure kubeconfig for Management Cluster
+
 ```shell
 $ tanzu management-cluster kubeconfig get $MGMT_CLUSTER_NAME --admin
 ```
 
 Set kubectl context to Management Cluster
+
 ```shell
 $ kubectl config use-context $MGMT_CLUSTER_NAME-admin@$MGMT_CLUSTER_NAME
 ```
 
 Node
+
 ```shell
 $ kubectl get nodes -o wide
 
@@ -149,6 +165,7 @@ arthur-md-0-74b864579-d976m   Ready    <none>                 31m   v1.21.2+vmwa
 ```
 
 Default Pods
+
 ```shell
 $ kubectl get pods -A
 
@@ -182,6 +199,7 @@ tkr-system                          tkr-controller-manager-cc88b6968-mmx7f      
 ```
 
 ### 5. Create Workload Cluster
+
 ```shell
 $ set -x WORKLOAD_CLUSTER_NAME lancelot
 $ tanzu cluster create $WORKLOAD_CLUSTER_NAME --plan dev
@@ -190,6 +208,7 @@ $ tanzu cluster create $WORKLOAD_CLUSTER_NAME --plan dev
 ![2-create-work-cluster](https://user-images.githubusercontent.com/3072734/142355024-30bd6cb7-c63e-4a13-a355-30982d954e92.gif)
 
 Confirmation
+
 ```shell
 $ tanzu cluster list --include-management-cluster
 
@@ -199,17 +218,21 @@ $ tanzu cluster list --include-management-cluster
 ```
 
 ### 6. Configure Workload Cluster
+
 Configure kubeconfig for Workload Cluster
+
 ```shell
 $ tanzu cluster kubeconfig get $WORKLOAD_CLUSTER_NAME --admin
 ```
 
 Set kubectl context to Workload Cluster
+
 ```shell
 $ kubectl config use-context $WORKLOAD_CLUSTER_NAME-admin@$WORKLOAD_CLUSTER_NAME
 ```
 
 Node
+
 ```shell
 $ kubectl get node -o wide
 
@@ -221,6 +244,7 @@ lancelot-md-0-65446f8c69-zjt29   Ready    <none>                 15m   v1.21.2+v
 ![3-cluster-config](https://user-images.githubusercontent.com/3072734/142356086-fe47ec1a-d751-4793-8859-366c1aa073e0.gif)
 
 Default Pods
+
 ```shell
 $ kubectl get pods -A
 
@@ -242,6 +266,7 @@ tkg-system    tanzu-capabilities-controller-manager-69f58566d9-gk24r   1/1     R
 ```
 
 ### 7. Confirm Docker Containers
+
 - 2 Clusters: `Management Cluster` and `Workload Cluster`
 - each cluster has
   - `Control Plane`
@@ -261,7 +286,9 @@ d390fad9250b   kindest/haproxy:v20210715-a6da3463                               
 ```
 
 ### 8. Install Package
+
 List available default packages
+
 ```shell
 $ tanzu package available list -A
 
@@ -279,6 +306,7 @@ $ tanzu package available list -A
 ```
 
 List installed packages
+
 ```shell
 $ tanzu package installed list -A
 
@@ -288,6 +316,7 @@ $ tanzu package installed list -A
 ```
 
 Add Package Repository for Tanzu Community Edition
+
 ```shell
 $ tanzu package repository add tce-repo \
   --url projects.registry.vmware.com/tce/main:0.9.1 \
@@ -295,11 +324,13 @@ $ tanzu package repository add tce-repo \
 ```
 
 Confirm the Package Repository
+
 ```shell
 $ tanzu package repository list -A
 ```
 
 #### Local Path Storage
+
 - [Local Path Storage - v0.0.20 ¶](https://tanzucommunityedition.io/docs/latest/package-readme-local-path-storage-0.0.20/)
 
 |Value|Required/Optional|Description|
@@ -307,16 +338,19 @@ $ tanzu package repository list -A
 |namespace|Required|The namespace to deploy the local-path-storage pods|
 
 Prepare for installation
+
 ```shell
 $ kubectl create ns tce-package
 ```
 
 Install Local Path Storage
+
 ```shell
 $ tanzu package install local-path-storage --package-name local-path-storage.community.tanzu.vmware.com -v 0.0.20 -n tce-package
 ```
 
 List Packages
+
 ```shell
 $ tanzu package installed list -A
 
@@ -327,6 +361,7 @@ $ tanzu package installed list -A
 ```
 
 List Pods
+
 ```shell
 $ kubectl get pods -A
 
@@ -349,6 +384,7 @@ tkg-system                 tanzu-capabilities-controller-manager-69f58566d9-r9t4
 ```
 
 Confirm Resource
+
 ```shell
 $ kubectl get storageclass  
 
@@ -357,12 +393,14 @@ local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsu
 ```
 
 ### 9. MetalLB
+
 MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
 
 - [MetalLB](https://github.com/metallb/metallb)
 
 The necessary manifests for MetalLB
-```
+
+```shell
 $ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/namespace.yaml
 $ kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="(openssl rand -base64 128)"
 $ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/metallb.yaml
@@ -392,11 +430,13 @@ $ kubectl apply -f metallb-config.yaml
 ```
 
 ### Delete Workload Cluster
+
 ```shell
 $ tanzu cluster delete $WORKLOAD_CLUSTER_NAME -y
 ```
 
 ### Delete Management Cluster
+
 ```shell
 $ tanzu management-cluster delete $MGMT_CLUSTER_NAME -y
 ```
@@ -413,4 +453,5 @@ Released under the [MIT license](https://gist.githubusercontent.com/shinyay/56e5
 ## Author
 
 [shinyay](https://github.com/shinyay)
-- twitter: https://twitter.com/yanashin18618
+
+- twitter: <https://twitter.com/yanashin18618>
