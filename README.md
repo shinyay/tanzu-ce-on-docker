@@ -26,6 +26,8 @@ In this procedure, you will do the following:
 - [Docker Desktop for Mac](https://docs.docker.com/desktop/mac/install/)
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
 
+![resouces](https://user-images.githubusercontent.com/3072734/143419251-6f61a2f3-433d-4301-ac30-cc03c0b4bdf0.png)
+
 ## Usage
 
 ## Installation
