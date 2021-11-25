@@ -107,7 +107,7 @@ $ docker pull kindest/haproxy:v20211115-b0f54c86
 
 ```shell
 $ set -x MGMT_CLUSTER_NAME mgmt
-$ tanzu management-cluster create -i docker --name $MGMT_CLUSTER_NAME -v 10 --plan dev --ceip-participation=false
+$ tanzu management-cluster create -i docker --name $MGMT_CLUSTER_NAME --plan dev --ceip-participation=false
 ```
 
 ![1-create-mgmt-cluster](https://user-images.githubusercontent.com/3072734/142351724-f3cbde50-b8d3-417f-a94a-c1a84e00fbca.gif)
@@ -117,20 +117,20 @@ Confirmation
 ```shell
 $ tanzu management-cluster get
 
-  NAME    NAMESPACE   STATUS   CONTROLPLANE  WORKERS  KUBERNETES        ROLES
-  arthur  tkg-system  running  1/1           1/1      v1.21.2+vmware.1  management
+  NAME  NAMESPACE   STATUS   CONTROLPLANE  WORKERS  KUBERNETES        ROLES
+  mgmt  tkg-system  running  1/1           1/1      v1.21.2+vmware.1  management
 
 
 Details:
 
-NAME                                                       READY  SEVERITY  REASON  SINCE  MESSAGE
-/arthur                                                    True                     10m
-├─ClusterInfrastructure - DockerCluster/arthur             True                     10m
-├─ControlPlane - KubeadmControlPlane/arthur-control-plane  True                     10m
-│ └─Machine/arthur-control-plane-gt88x                     True                     10m
+NAME                                                     READY  SEVERITY  REASON  SINCE  MESSAGE
+/mgmt                                                    True                     20m
+├─ClusterInfrastructure - DockerCluster/mgmt             True                     20m
+├─ControlPlane - KubeadmControlPlane/mgmt-control-plane  True                     20m
+│ └─Machine/mgmt-control-plane-mglw6                     True                     20m
 └─Workers
-  └─MachineDeployment/arthur-md-0
-    └─Machine/arthur-md-0-74b864579-d976m                  True                     10m
+  └─MachineDeployment/mgmt-md-0
+    └─Machine/mgmt-md-0-595ff89958-8cskm                 True                     20m
 
 
 Providers:
