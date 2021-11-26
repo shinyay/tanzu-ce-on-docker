@@ -21,16 +21,24 @@ In this procedure, you will do the following:
 
 ## Requirement
 
-- RAM: 6 GB
-- CPU: 2
 - [Docker Desktop for Mac](https://docs.docker.com/desktop/mac/install/)
-- [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
+  - RAM: 6 GB
+  - CPU: 2
 
 ![resouces](https://user-images.githubusercontent.com/3072734/143419251-6f61a2f3-433d-4301-ac30-cc03c0b4bdf0.png)
+
+- [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
 
 ## Usage
 
 ## Installation
+
+### 0. Clean up for Docker
+
+```shell
+$ docker kill (docker ps -aq)
+$ docker system prune -a --volumes -f
+```
 
 ### 1. Download Tanzu CLI
 
