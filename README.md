@@ -451,6 +451,14 @@ $ tanzu cluster delete $WORKLOAD_CLUSTER_NAME -y
 $ tanzu management-cluster delete $MGMT_CLUSTER_NAME -y
 ```
 
+### Sample Application
+
+Initialize a New Project
+
+```shell
+$ spring --dependencies=webflux,data-r2dbc,h2 --build=gradle --language=kotlin --java-version=11
+```
+
 ## References
 
 - [Getting Started with Tanzu Community Edition](https://tanzucommunityedition.io/docs/latest/getting-started/)
