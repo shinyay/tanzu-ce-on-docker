@@ -8,5 +8,5 @@ spring:
     init:
       mode: embedded
       encoding: UTF-8
-      schema-locations: db/schema.sql
-      data-locations: db/data.sql
+      schema-locations: classpath:db/schema.sql
+      data-locations: classpath:db/data.sql
