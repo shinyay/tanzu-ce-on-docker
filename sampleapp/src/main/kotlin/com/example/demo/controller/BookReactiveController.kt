@@ -19,6 +19,7 @@ class BookReactiveController(val repository: BookRepository) {
         return route()
             .GET("/books", this::findAllHandler)
             .POST("/books", this::createHandler)
+//            .DELETE()
             .build()
     }
 
