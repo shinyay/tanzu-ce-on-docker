@@ -528,6 +528,17 @@ fun findAllHandler(request: ServerRequest): Mono<ServerResponse> {
 }
 ```
 
+- Router
+
+```kotlin
+@Bean
+fun router(): RouterFunction<ServerResponse> {
+    return route()
+        .GET("/books", this::findAllHandler)
+        .build()
+}
+```
+
 ## References
 
 - [Getting Started with Tanzu Community Edition](https://tanzucommunityedition.io/docs/latest/getting-started/)
