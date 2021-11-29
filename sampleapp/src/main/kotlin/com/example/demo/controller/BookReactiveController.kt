@@ -30,7 +30,7 @@ class BookReactiveController(val repository: BookRepository) {
         return book.flatMap { it ->
             ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(repository.save(it), Book::class.java) 
+                .body(repository.save(it), Book::class.java)
         }
     }
 }
