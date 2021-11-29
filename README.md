@@ -559,8 +559,11 @@ $ curl -X GET http://localhost:8080/books
 $ ./gradlew bootBuildImage --imageName=shinyay/demo:0.0.1-SNAPSHOT
 ```
 
+- Push to Docker Hub
 
-
+```shell
+$ docker push shinyay/demo:0.0.1-SNAPSHOT
+```
 
 </div></details>
 
