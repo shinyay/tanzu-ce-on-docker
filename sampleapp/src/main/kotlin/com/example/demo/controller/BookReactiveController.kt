@@ -18,6 +18,7 @@ class BookReactiveController(val repository: BookRepository) {
     fun router(): RouterFunction<ServerResponse> {
         return route()
             .GET("/books", this::findAllHandler)
+            .POST("/books", this::createHandler)
             .build()
     }
 
