@@ -482,8 +482,6 @@ INSERT INTO book VALUES (3, 'Spring Boot in Action')
 INSERT INTO book VALUES (4, 'Spring Boot in Practice')
 ```
 
-</div></details>
-
 #### Entity
 
 - Data Class
@@ -538,6 +536,8 @@ fun router(): RouterFunction<ServerResponse> {
         .build()
 }
 ```
+
+</div></details>
 
 ## References
 
