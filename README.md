@@ -512,6 +512,15 @@ data class Book(
 interface BookRepository : ReactiveCrudRepository<Book, Long>
 ```
 
+#### Controller as Functional Endpoint
+
+Two ways of Flux controller
+- [ ] Annotated Controller
+- [x] Functional Endpoint
+  - `Handler` and `Router`
+
+
+
 ## References
 
 - [Getting Started with Tanzu Community Edition](https://tanzucommunityedition.io/docs/latest/getting-started/)
