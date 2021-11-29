@@ -455,12 +455,21 @@ $ tanzu management-cluster delete $MGMT_CLUSTER_NAME -y
 
 ### Sample Application
 
-Initialize a New Project
+#### Initialize a New Project
 
 ```shell
 $ spring --dependencies=webflux,data-r2dbc,h2 --build=gradle --language=kotlin --java-version=11
 ```
 
+#### Database Schema
+
+```sql
+DROP TABLE IF EXISTS book;
+CREATE TABLE book (
+  id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR (255) NOT NULL
+);
+```
 
 </div></details>
 
