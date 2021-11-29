@@ -19,7 +19,7 @@ class BookReactiveController(val repository: BookRepository) {
         return route()
             .GET("/books", this::findAllHandler)
             .POST("/books", this::createHandler)
-            .DELETE("/books/{id}", this::deleteHandler)
+            .DELETE("/books/{id:[0-9]+}", this::deleteHandler)
             .build()
     }
 
@@ -38,10 +38,10 @@ class BookReactiveController(val repository: BookRepository) {
 
     fun deleteHandler(request: ServerRequest): Mono<ServerResponse> {
         val id = request.pathVariable("id").toLong()
-        return repository.findById(id)
-            .flatMap {
-                repository.delete(it)
-                ServerResponse.ok().build()
+        return repository
+            .findById(id)
+            .flatMap { it ->
+                ServerResponse.noContent().build(repository.delete(it))
             }
             .switchIfEmpty(ServerResponse.notFound().build())
     }
