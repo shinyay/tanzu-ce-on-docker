@@ -520,6 +520,13 @@ Two ways of Flux controller
   - `Handler` and `Router`
 
 
+- Handler
+
+```kotlin
+fun findAllHandler(request: ServerRequest): Mono<ServerResponse> {
+    return ServerResponse.ok().body(repository.findAll(), Book::class.java)
+}
+```
 
 ## References
 
