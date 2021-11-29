@@ -551,6 +551,17 @@ $ ./gradlew clean bootRun
 $ curl -X GET http://localhost:8080/books
 ```
 
+#### Containerization
+
+- Build a Container image
+
+```shell
+$ ./gradlew bootBuildImage --imageName=shinyay/demo:0.0.1-SNAPSHOT
+```
+
+
+
+
 </div></details>
 
 ## References
