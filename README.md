@@ -484,6 +484,11 @@ INSERT INTO book VALUES (4, 'Spring Boot in Practice')
 
 </div></details>
 
+#### Entity
+
+- Data Class
+  - ID element: `id` as `Long`
+  - `name` as `String`
 
 ## References
 
