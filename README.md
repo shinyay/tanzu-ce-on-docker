@@ -461,7 +461,9 @@ $ tanzu management-cluster delete $MGMT_CLUSTER_NAME -y
 $ spring --dependencies=webflux,data-r2dbc,h2 --build=gradle --language=kotlin --java-version=11
 ```
 
-#### Database Schema
+#### Database Schema and Test Data
+
+- Schema
 
 ```sql
 DROP TABLE IF EXISTS book;
@@ -469,6 +471,15 @@ CREATE TABLE book (
   id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR (255) NOT NULL
 );
+```
+
+- Data
+
+```sql
+INSERT INTO book VALUES (1, 'Spring in Action')
+INSERT INTO book VALUES (2, 'Spring in Practice')
+INSERT INTO book VALUES (3, 'Spring Boot in Action')
+INSERT INTO book VALUES (4, 'Spring Boot in Practice')
 ```
 
 </div></details>
