@@ -34,4 +34,8 @@ class BookReactiveController(val repository: BookRepository) {
                 .body(repository.save(it), Book::class.java)
         }
     }
+
+    fun deleteHandler(request: ServerRequest): Mono<ServerResponse> {
+
+    }
 }
