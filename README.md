@@ -487,8 +487,21 @@ INSERT INTO book VALUES (4, 'Spring Boot in Practice')
 #### Entity
 
 - Data Class
-  - ID element: `id` as `Long`
-  - `name` as `String`
+  - Book elements
+    - ID element: `id` as `Long`
+    - `name` as `String`
+  - Second Constructor
+    - It is used for auto incremented id
+
+```kotlin
+data class Book(
+    @Id
+    val id: Long,
+    val name: String
+) {
+    constructor(name: String) : this(0, name)
+}
+```
 
 ## References
 
