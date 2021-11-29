@@ -513,10 +513,10 @@ interface BookRepository : ReactiveCrudRepository<Book, Long>
 #### Controller as Functional Endpoint
 
 Two ways of Flux controller
+
 - [ ] Annotated Controller
 - [x] Functional Endpoint
   - `Handler` and `Router`
-
 
 - Handler
 
@@ -535,6 +535,12 @@ fun router(): RouterFunction<ServerResponse> {
         .GET("/books", this::findAllHandler)
         .build()
 }
+```
+
+#### Boot Run
+
+```shell
+$ ./gradlew clean bootRun
 ```
 
 </div></details>
