@@ -503,6 +503,15 @@ data class Book(
 }
 ```
 
+#### Repository Interface
+
+- ReactiveCrudRepository
+
+```kotlin
+@Repository
+interface BookRepository : ReactiveCrudRepository<Book, Long>
+```
+
 ## References
 
 - [Getting Started with Tanzu Community Edition](https://tanzucommunityedition.io/docs/latest/getting-started/)
