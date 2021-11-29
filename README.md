@@ -539,8 +539,16 @@ fun router(): RouterFunction<ServerResponse> {
 
 #### Boot Run
 
+- Build
+
 ```shell
 $ ./gradlew clean bootRun
+```
+
+- Access
+
+```shell
+$ curl -X GET http://localhost:8080/books
 ```
 
 </div></details>
