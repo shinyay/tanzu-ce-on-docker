@@ -1,3 +1,5 @@
+![tce-logo](https://tanzucommunityedition.io/img/TCE-logo.svg)
+
 # Getting Started with Tanzu Community Edition on Docker
 
 Tanzu Community Edition is a fully-featured, easy to manage, Kubernetes platform for learners and users.
