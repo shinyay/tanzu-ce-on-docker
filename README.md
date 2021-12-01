@@ -524,6 +524,12 @@ local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsu
 $ tanzu cluster delete $WORKLOAD_CLUSTER_NAME -y
 ```
 
+```shell
+$ kubectl config delete-cluster $WORKLOAD_CLUSTER_NAME
+$ kubectl config delete-context $WORKLOAD_CLUSTER_NAME
+
+```
+
 #### Delete Management Cluster
 
 ```shell
