@@ -382,6 +382,27 @@ $ curl -X GET http://localhost:8080/books
 tanzu cluster scale $WORKLOAD_CLUSTER_NAME -w 3
 ```
 
+```shell
+$ tanzu cluster get $WORKLOAD_CLUSTER_NAME --show-group-memebers
+
+  NAME      NAMESPACE  STATUS    CONTROLPLANE  WORKERS  KUBERNETES        ROLES
+  workload  default    updating  1/1           1/3      v1.21.2+vmware.1  <none>
+ℹ
+
+Details:
+
+NAME                                                         READY  SEVERITY  REASON  SINCE  MESSAGE
+/workload                                                    True                     3h59m
+├─ClusterInfrastructure - DockerCluster/workload             True                     4h
+├─ControlPlane - KubeadmControlPlane/workload-control-plane  True                     3h59m
+│ └─Machine/workload-control-plane-hfx84                     True                     3h59m
+└─Workers
+  └─MachineDeployment/workload-md-0
+    ├─Machine/workload-md-0-7fbf46cf4b-mr7l2                 True                     26s
+    ├─Machine/workload-md-0-7fbf46cf4b-qszp5                 True                     25s
+    └─Machine/workload-md-0-7fbf46cf4b-wdjsg                 True                     3h58m
+```
+
 ### Install Package
 
 List available default packages
