@@ -516,13 +516,15 @@ local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsu
 
 </div></details>
 
-### Delete Workload Cluster
+### Clean Up Clusters
+
+#### Delete Workload Cluster
 
 ```shell
 $ tanzu cluster delete $WORKLOAD_CLUSTER_NAME -y
 ```
 
-### Delete Management Cluster
+#### Delete Management Cluster
 
 ```shell
 $ tanzu management-cluster delete $MGMT_CLUSTER_NAME -y
