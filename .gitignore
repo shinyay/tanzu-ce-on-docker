@@ -1,2 +1,4 @@
 tce-darwin-amd64-*
 demo.zip
+deployment.yml
+loadbalancer.yml
