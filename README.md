@@ -459,6 +459,19 @@ $ kubectl apply -f deployment.yml
 $ kubectl apply -f loadbalancer.yml
 ```
 
+#### Confirm the Deployment
+
+```shell
+$ kubectl get pod,svc -l app=demo-app
+
+
+NAME                            READY   STATUS    RESTARTS   AGE
+pod/demo-app-68f6d58459-7zjkk   1/1     Running   0          6m
+
+NAME               TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)        AGE
+service/demo-app   LoadBalancer   100.66.24.88   172.18.0.150   80:30719/TCP   6m
+```
+
 ### Delete Workload Cluster
 
 ```shell
