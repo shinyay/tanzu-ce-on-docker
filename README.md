@@ -464,7 +464,6 @@ $ kubectl apply -f loadbalancer.yml
 ```shell
 $ kubectl get pod,svc -l app=demo-app
 
-
 NAME                            READY   STATUS    RESTARTS   AGE
 pod/demo-app-68f6d58459-7zjkk   1/1     Running   0          6m
 
@@ -477,7 +476,13 @@ service/demo-app   LoadBalancer   100.66.24.88   172.18.0.150   80:30719/TCP   6
 Configure Port-Foward
 
 ```shell
+$ kubectl port-forward service/demo-app 8080:8080
+```
 
+Access the App
+
+```shell
+$ curl -X GET http://localhost:8080/books
 ```
 
 ### Delete Workload Cluster
