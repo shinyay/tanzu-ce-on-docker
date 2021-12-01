@@ -327,6 +327,8 @@ $ tanzu package installed list -A
   metrics-server  metrics-server.tanzu.vmware.com                   Reconcile succeeded  tkg-system
 ```
 
+![tce-package-repo](https://tanzucommunityedition.io/docs/img/pkg-mgmt-repo.png)
+
 Add Package Repository for Tanzu Community Edition
 
 ```shell
