@@ -451,7 +451,7 @@ $ kubectl apply -f metallb-config.yaml
 
 ```shell
 $ kubectl create deployment demo-app --image=shinyay/demo:0.0.1-SNAPSHOT --dry-run=client -o=yaml > deployment.yml
-$ kubectl create service loadbalancer demo-app --tcp=80:8080 --dry-run=client -o=yaml > loadbalancer.yml
+$ kubectl create service loadbalancer demo-app --tcp=8080:8080 --dry-run=client -o=yaml > loadbalancer.yml
 ```
 
 ```shell
@@ -470,6 +470,14 @@ pod/demo-app-68f6d58459-7zjkk   1/1     Running   0          6m
 
 NAME               TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)        AGE
 service/demo-app   LoadBalancer   100.66.24.88   172.18.0.150   80:30719/TCP   6m
+```
+
+#### Access the Application
+
+Configure Port-Foward
+
+```shell
+
 ```
 
 ### Delete Workload Cluster
