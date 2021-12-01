@@ -376,6 +376,12 @@ $ curl -X GET http://localhost:8080/books
 
 <details><summary>Optional Tutorial</summary><div>
 
+### Scale Cluster
+
+```shell
+tanzu cluster scale $WORKLOAD_CLUSTER_NAME -w 3
+```
+
 ### Install Package
 
 List available default packages
