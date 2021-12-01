@@ -445,6 +445,14 @@ data:
 $ kubectl apply -f metallb-config.yaml
 ```
 
+### 10. Application Deployment
+
+#### Create a Deployement YAML
+
+```shell
+$ kubectl create deployment demo-app --image=shinyay/demo:0.0.1-SNAPSHOT --dry-run=client -o=yaml > deployment.yml
+```
+
 ### Delete Workload Cluster
 
 ```shell
