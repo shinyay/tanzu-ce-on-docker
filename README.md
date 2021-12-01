@@ -297,7 +297,86 @@ dd9e31b34ef0   projects-stg.registry.vmware.com/tkg/kind/node:v1.21.2_vmware.1  
 d390fad9250b   kindest/haproxy:v20210715-a6da3463                                "haproxy -sf 7 -W -d…"   About an hour ago   Up About an hour   41941/tcp, 0.0.0.0:41941->6443/tcp     arthur-lb
 ```
 
-### 8. Install Package
+### 8. MetalLB
+
+MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
+
+- [MetalLB](https://github.com/metallb/metallb)
+
+The necessary manifests for MetalLB
+
+```shell
+$ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/namespace.yaml
+$ kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="(openssl rand -base64 128)"
+$ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/metallb.yaml
+```
+
+ConfigMap for MetalLB
+
+IP Range should be 172.18.0.0/16
+
+```shell
+$ string trim '
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 172.18.0.150-172.18.0.200
+' > metallb-config.yaml
+
+$ kubectl apply -f metallb-config.yaml
+```
+
+### 9. Application Deployment
+
+#### Deploy App and Loadbalancer
+
+```shell
+$ kubectl create deployment demo-app --image=shinyay/demo:0.0.1-SNAPSHOT --dry-run=client -o=yaml > deployment.yml
+$ kubectl create service loadbalancer demo-app --tcp=8080:8080 --dry-run=client -o=yaml > loadbalancer.yml
+```
+
+```shell
+$ kubectl apply -f deployment.yml
+$ kubectl apply -f loadbalancer.yml
+```
+
+#### Confirm the Deployment
+
+```shell
+$ kubectl get pod,svc -l app=demo-app
+
+NAME                            READY   STATUS    RESTARTS   AGE
+pod/demo-app-68f6d58459-7zjkk   1/1     Running   0          6m
+
+NAME               TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)        AGE
+service/demo-app   LoadBalancer   100.66.24.88   172.18.0.150   80:30719/TCP   6m
+```
+
+#### Access the Application
+
+Configure Port-Foward
+
+```shell
+$ kubectl port-forward service/demo-app 8080:8080
+```
+
+Access the App
+
+```shell
+$ curl -X GET http://localhost:8080/books
+```
+
+<details><summary>Optional Tutorial</summary><div>
+
+### Install Package
 
 List available default packages
 
@@ -408,82 +487,7 @@ NAME                   PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE
 local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  4m21s
 ```
 
-### 9. MetalLB
-
-MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
-
-- [MetalLB](https://github.com/metallb/metallb)
-
-The necessary manifests for MetalLB
-
-```shell
-$ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/namespace.yaml
-$ kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="(openssl rand -base64 128)"
-$ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/metallb.yaml
-```
-
-ConfigMap for MetalLB
-
-IP Range should be 172.18.0.0/16
-
-```shell
-$ string trim '
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  namespace: metallb-system
-  name: config
-data:
-  config: |
-    address-pools:
-    - name: default
-      protocol: layer2
-      addresses:
-      - 172.18.0.150-172.18.0.200
-' > metallb-config.yaml
-
-$ kubectl apply -f metallb-config.yaml
-```
-
-### 10. Application Deployment
-
-#### Deploy App and Loadbalancer
-
-```shell
-$ kubectl create deployment demo-app --image=shinyay/demo:0.0.1-SNAPSHOT --dry-run=client -o=yaml > deployment.yml
-$ kubectl create service loadbalancer demo-app --tcp=8080:8080 --dry-run=client -o=yaml > loadbalancer.yml
-```
-
-```shell
-$ kubectl apply -f deployment.yml
-$ kubectl apply -f loadbalancer.yml
-```
-
-#### Confirm the Deployment
-
-```shell
-$ kubectl get pod,svc -l app=demo-app
-
-NAME                            READY   STATUS    RESTARTS   AGE
-pod/demo-app-68f6d58459-7zjkk   1/1     Running   0          6m
-
-NAME               TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)        AGE
-service/demo-app   LoadBalancer   100.66.24.88   172.18.0.150   80:30719/TCP   6m
-```
-
-#### Access the Application
-
-Configure Port-Foward
-
-```shell
-$ kubectl port-forward service/demo-app 8080:8080
-```
-
-Access the App
-
-```shell
-$ curl -X GET http://localhost:8080/books
-```
+</div></details>
 
 ### Delete Workload Cluster
 
