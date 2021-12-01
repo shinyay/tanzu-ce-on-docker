@@ -447,10 +447,16 @@ $ kubectl apply -f metallb-config.yaml
 
 ### 10. Application Deployment
 
-#### Create a Deployement YAML
+#### Deploy App and Loadbalancer
 
 ```shell
 $ kubectl create deployment demo-app --image=shinyay/demo:0.0.1-SNAPSHOT --dry-run=client -o=yaml > deployment.yml
+$ kubectl create service loadbalancer demo-app --tcp=80:8080 --dry-run=client -o=yaml > loadbalancer.yml
+```
+
+```shell
+$ kubectl apply -f deployment.yml
+$ kubectl apply -f loadbalancer.yml
 ```
 
 ### Delete Workload Cluster
