@@ -635,10 +635,10 @@ fun router(): RouterFunction<ServerResponse> {
 |spring.r2dbc.url|r2dbc:h2:mem:///test?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;DATABASE_TO_UPPER=FALSE;mode=mysql|
 |spring.r2dbc.username|spring|
 |spring.r2dbc.password||
-|spring.sql.init.mode||
-|spring.sql.init.encoding||
-|spring.sql.init.schema-locations||
-|spring.sql.init.data-locations||
+|spring.sql.init.mode|embedded|
+|spring.sql.init.encoding|UTF-8|
+|spring.sql.init.schema-locations|classpath:db/schema.sql|
+|spring.sql.init.data-locations|classpath:db/data.sql|
 
 #### Boot Run
 
