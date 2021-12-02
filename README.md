@@ -541,6 +541,13 @@ $ tanzu management-cluster delete $MGMT_CLUSTER_NAME -y
 
 #### Initialize a New Project
 
+|Parameter|Contents|
+|---------|--------|
+|dependencies|webflux,data-r2dbc,h2|
+|build|gradle|
+|language|kotlin|
+|java-version|11|
+
 ```shell
 $ spring --dependencies=webflux,data-r2dbc,h2 --build=gradle --language=kotlin --java-version=11
 ```
