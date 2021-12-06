@@ -535,6 +535,12 @@ $ kubectl config delete-context $WORKLOAD_CLUSTER_NAME-admin@$WORKLOAD_CLUSTER_N
 $ tanzu management-cluster delete $MGMT_CLUSTER_NAME -y
 ```
 
+#### Delete Volumes
+
+```
+$ docker system prune -a --volumes -f
+```
+
 <details><summary>Sample Application</summary><div>
 
 ### Sample Application
