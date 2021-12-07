@@ -526,7 +526,7 @@ $ tanzu cluster delete $WORKLOAD_CLUSTER_NAME -y
 
 ```shell
 $ kubectl config delete-cluster $WORKLOAD_CLUSTER_NAME
-$ kubectl config delete-context $WORKLOAD_CLUSTER_NAME-admin@$WORKLOAD_CLUSTER_NAME -y
+$ kubectl config delete-context $WORKLOAD_CLUSTER_NAME-admin@$WORKLOAD_CLUSTER_NAME
 ```
 
 #### Delete Management Cluster
