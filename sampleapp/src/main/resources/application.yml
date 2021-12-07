@@ -9,3 +9,6 @@ spring:
       encoding: UTF-8
       schema-locations: classpath:db/schema.sql
       data-locations: classpath:db/data.sql
+  banner:
+    image:
+      location: classpath:tuna.png
