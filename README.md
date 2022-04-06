@@ -38,8 +38,8 @@ In this procedure, you will do the following:
 ### 0. Clean up for Docker
 
 ```shell
-$ docker kill (docker ps -aq)
-$ docker system prune -a --volumes -f
+docker kill (docker ps -aq)
+docker system prune -a --volumes -f
 ```
 
 ### 1. Download Tanzu CLI
@@ -47,9 +47,7 @@ $ docker system prune -a --volumes -f
 Download the latest module from [GitHub](https://github.com/vmware-tanzu/community-edition/releases/)
 
 ```shell
-$ curl -sSLO https://github.com/vmware-tanzu/community-edition/releases/download/v0.7.0-rc.4/tce-darwin-amd64-v0.7.0-rc.4.tar.gz
-$ tar xzvf tce-darwin-amd64-*
-$ rm tce-darwin-amd64-*.gz
+brew install vmware-tanzu/tanzu/tanzu-community-edition
 ```
 
 Install Tanzu CLI
