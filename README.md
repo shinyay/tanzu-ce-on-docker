@@ -46,14 +46,12 @@ docker system prune -a --volumes -f
 
 Download the latest module from [GitHub](https://github.com/vmware-tanzu/community-edition/releases/)
 
-```shell
-brew install vmware-tanzu/tanzu/tanzu-community-edition
-```
-
 Install Tanzu CLI
 
 ```shell
-$ tce-darwin-amd64-*/install.sh
+curl -H "Accept: application/vnd.github.v3.raw" \
+    -L https://api.github.com/repos/vmware-tanzu/community-edition/contents/hack/get-tce-release.sh | \
+    bash -s v0.11.0 darwin
 ```
 
 Confirmation
