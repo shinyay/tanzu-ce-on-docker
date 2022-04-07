@@ -54,6 +54,12 @@ curl -H "Accept: application/vnd.github.v3.raw" \
     bash -s v0.11.0 darwin
 ```
 
+Unpack the release
+
+```shell
+tar xzvf ~/<DOWNLOAD-DIR>/tce-linux-amd64-v0.11.0.tar.gz
+```
+
 Confirmation
 
 ```shell
