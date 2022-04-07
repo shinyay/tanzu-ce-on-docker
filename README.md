@@ -60,6 +60,22 @@ Unpack the release
 tar xzvf ~/<DOWNLOAD-DIR>/tce-linux-amd64-v0.11.0.tar.gz
 ```
 
+Run the install script
+
+```shell
+cd tce-darwin-amd64-v0.11.0
+./install.sh
+```
+```shell
+====================================
+ Installing Tanzu Community Edition
+====================================
+
+Installing tanzu cli to /usr/local/bin/tanzu
+Password:
+```
+
+
 Confirmation
 
 ```shell
