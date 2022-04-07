@@ -66,6 +66,7 @@ Run the install script
 cd tce-darwin-amd64-v0.11.0
 ./install.sh
 ```
+
 ```shell
 ====================================
  Installing Tanzu Community Edition
@@ -74,7 +75,6 @@ cd tce-darwin-amd64-v0.11.0
 Installing tanzu cli to /usr/local/bin/tanzu
 Password:
 ```
-
 
 Confirmation
 
