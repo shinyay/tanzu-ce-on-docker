@@ -170,6 +170,14 @@ Providers:
   capi-system                        cluster-api            CoreProvider            cluster-api   v0.3.23
 ```
 
+#### Troubleshooting
+
+- Conflicting the same management cluster I've deleted
+
+```shell
+rm -fr  ~/.config/tanzu/
+```
+
 ### 4. Configure Management Cluster
 
 Configure kubeconfig for Management Cluster
