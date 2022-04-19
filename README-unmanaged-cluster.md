@@ -102,3 +102,23 @@ Delete this cluster:
   ```
 
 </details>
+
+<details>
+<summary>kubectl get po -A</summary>
+
+```shell
+NAMESPACE            NAME                                               READY   STATUS    RESTARTS   AGE
+kube-system          calico-kube-controllers-5f8888f94-652vn            1/1     Running   0          5m4s
+kube-system          calico-node-fsh8r                                  1/1     Running   0          5m4s
+kube-system          coredns-78fcd69978-g94gj                           1/1     Running   0          5m51s
+kube-system          coredns-78fcd69978-jtxd8                           1/1     Running   0          5m51s
+kube-system          etcd-my-cluster-control-plane                      1/1     Running   0          6m5s
+kube-system          kube-apiserver-my-cluster-control-plane            1/1     Running   0          6m6s
+kube-system          kube-controller-manager-my-cluster-control-plane   1/1     Running   0          6m6s
+kube-system          kube-proxy-dwbj4                                   1/1     Running   0          5m51s
+kube-system          kube-scheduler-my-cluster-control-plane            1/1     Running   0          6m5s
+local-path-storage   local-path-provisioner-85494db59d-5r9hz            1/1     Running   0          5m51s
+tkg-system           kapp-controller-779d9777dc-xc4mv                   1/1     Running   0          5m51s
+```
+
+</details>
