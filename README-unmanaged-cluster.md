@@ -122,3 +122,22 @@ tkg-system           kapp-controller-779d9777dc-xc4mv                   1/1     
 ```
 
 </details>
+
+### 3. Deploy a Package
+
+List the available package repositories
+
+```shell
+tanzu package repository list --all-namespaces
+```
+
+<details>
+<summary>listing repositories</summary>
+
+```shell
+  NAME                                           REPOSITORY                                TAG      STATUS               DETAILS  NAMESPACE
+  projects.registry.vmware.com-tce-main-v0.11.0  projects.registry.vmware.com/tce/main     v0.11.0  Reconcile succeeded           tanzu-package-repo-global
+  tkg-core-repository                            projects.registry.vmware.com/tce/repo-10  0.10.0   Reconcile succeeded           tkg-system
+```
+
+</details>
