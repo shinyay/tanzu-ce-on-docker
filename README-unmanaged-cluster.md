@@ -185,3 +185,14 @@ tanzu package installed list
 ```
 
 </details>
+
+### 4. Delete a Cluster
+
+List the available cluster
+
+```shell
+tanzu unmanaged-cluster list
+
+  NAME        PROVIDER
+  my-cluster  kind
+```
