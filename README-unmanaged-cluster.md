@@ -141,3 +141,23 @@ tanzu package repository list --all-namespaces
 ```
 
 </details>
+
+List the available version of the specific package
+
+```shell
+tanzu package available list {PACKAGE_NAME}
+
+tanzu package available list contour.community.tanzu.vmware.com
+```
+
+<details>
+<summary>listing repositories</summary>
+
+```shell
+  NAME                                VERSION  RELEASED-AT
+  contour.community.tanzu.vmware.com  1.18.1   2021-07-24 03:00:00 +0900 JST
+  contour.community.tanzu.vmware.com  1.19.1   2021-10-26 09:00:00 +0900 JST
+  contour.community.tanzu.vmware.com  1.20.1   2022-02-24 09:00:00 +0900 JST
+```
+
+</details>
