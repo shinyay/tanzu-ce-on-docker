@@ -169,3 +169,19 @@ tanzu package install {INSTALLED_PACKAGE_NAME} --package-name {PACKAGE_NAME} --v
 
 tanzu package install contour --package-name contour.community.tanzu.vmware.com --version 1.20.1
 ```
+
+List the installed package
+
+```shell
+tanzu package installed list
+```
+
+<details>
+<summary>listing repositories</summary>
+
+```shell
+  NAME     PACKAGE-NAME                        PACKAGE-VERSION  STATUS
+  contour  contour.community.tanzu.vmware.com  1.20.1            Reconcile succeeded
+```
+
+</details>
