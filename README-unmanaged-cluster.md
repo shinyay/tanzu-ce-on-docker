@@ -75,3 +75,30 @@ Delete this cluster:
 ```
 
 </details>
+
+<details>
+<summary>tanzu package available list</summary>
+
+```shell
+  NAME                                                 DISPLAY-NAME                 SHORT-DESCRIPTION                                                                                                                                          LATEST-VERSION
+  app-toolkit.community.tanzu.vmware.com               App-Toolkit package for TCE  Kubernetes-native toolkit to support application lifecycle                                                                                                 0.1.0
+  cartographer.community.tanzu.vmware.com              Cartographer                 Kubernetes native Supply Chain Choreographer.                                                                                                              0.2.2
+  cert-injection-webhook.community.tanzu.vmware.com    cert-injection-webhook       The Cert Injection Webhook injects CA certificates and proxy environment variables into pods                                                               0.1.0
+  cert-manager.community.tanzu.vmware.com              cert-manager                 Certificate management                                                                                                                                     1.6.1
+  contour.community.tanzu.vmware.com                   contour                      An ingress controller                                                                                                                                      1.20.1
+  external-dns.community.tanzu.vmware.com              external-dns                 This package provides DNS synchronization functionality.                                                                                                   0.10.0
+  fluent-bit.community.tanzu.vmware.com                fluent-bit                   Fluent Bit is a fast Log Processor and Forwarder                                                                                                           1.7.5
+  fluxcd-source-controller.community.tanzu.vmware.com  Flux Source Controller       The source-controller is a Kubernetes operator, specialised in artifacts acquisition from external sources such as Git, Helm repositories and S3 buckets.  0.21.2
+  gatekeeper.community.tanzu.vmware.com                gatekeeper                   policy management                                                                                                                                          3.7.0
+  grafana.community.tanzu.vmware.com                   grafana                      Visualization and analytics software                                                                                                                       7.5.11
+  harbor.community.tanzu.vmware.com                    harbor                       OCI Registry                                                                                                                                               2.3.3
+  knative-serving.community.tanzu.vmware.com           knative-serving              Knative Serving builds on Kubernetes to support deploying and serving of applications and functions as serverless containers                               1.0.0
+  kpack.community.tanzu.vmware.com                     kpack                        kpack builds application source code into OCI compliant images using Cloud Native Buildpacks                                                               0.5.1
+  local-path-storage.community.tanzu.vmware.com        local-path-storage           This package provides local path node storage and primarily supports RWO AccessMode.                                                                       0.0.20
+  multus-cni.community.tanzu.vmware.com                multus-cni                   This package provides the ability for enabling attaching multiple network interfaces to pods in Kubernetes                                                 3.7.1
+  prometheus.community.tanzu.vmware.com                prometheus                   A time series database for your metrics                                                                                                                    2.27.0-1
+  velero.community.tanzu.vmware.com                    velero                       Disaster recovery capabilities                                                                                                                             1.8.0
+  whereabouts.community.tanzu.vmware.com               whereabouts                  A CNI IPAM plugin that assigns IP addresses cluster-wide                                                                                                   0.5.0
+  ```
+
+</details>
