@@ -161,3 +161,11 @@ tanzu package available list contour.community.tanzu.vmware.com
 ```
 
 </details>
+
+Install the package
+
+```shell
+tanzu package install {INSTALLED_PACKAGE_NAME} --package-name {PACKAGE_NAME} --version {VERSION}
+
+tanzu package install contour --package-name contour.community.tanzu.vmware.com --version 1.20.1
+```
