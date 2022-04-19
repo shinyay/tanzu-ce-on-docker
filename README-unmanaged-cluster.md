@@ -196,3 +196,10 @@ tanzu unmanaged-cluster list
   NAME        PROVIDER
   my-cluster  kind
 ```
+
+
+Delete the cluster
+
+```shell
+tanzu unmanaged-cluster delete my-cluster
+```
