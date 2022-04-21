@@ -8,6 +8,11 @@ Tanzu Community Edition is a fully-featured, easy to manage, Kubernetes platform
 
 ## Description
 
+There are two types of clusters
+
+- `Managed Clusters`
+- `Unmanaged Clusters`
+
 ### Managed Cluster
 
 In this procedure, you will do the following:
