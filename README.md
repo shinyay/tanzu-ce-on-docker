@@ -15,6 +15,8 @@ There are two types of clusters
 
 ### Managed Cluster
 
+Managed clusters is a deployment model that features 1 management cluster and N workload cluster(s), which runs **Cluster-API**
+
 In this procedure, you will do the following:
 
 - [Installing Tanzu CLI](#1-download-tanzu-cli)
