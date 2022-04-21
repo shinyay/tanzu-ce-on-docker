@@ -25,6 +25,10 @@ In this procedure, you will do the following:
 
 ### Unmanaged Cluster
 
+By default, Unmanaged Cluster runs locally via kind with Tanzu components installed atop.
+An unmanaged cluster offers a `single node`, local workstation cluster suitable for a development/test environment.
+
+
 - [The following procedure](./README-unmanaged-cluster.md)
 
 ## Demo
