@@ -243,3 +243,9 @@ Confirm available package list
 tanzu package available list
 ```
 
+Confirm available Contour version
+
+```shell
+ tanzu package available list contour.community.tanzu.vmware.com
+```
+
