@@ -438,3 +438,12 @@ spec:
 ```shell
 kubectl apply -f nginx-lb.yml
 ```
+
+Confirm LoadBalancer
+
+```shell
+kubectl get services
+
+NAME            TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)        AGE
+nginx-metallb   LoadBalancer   10.96.96.20   192.168.1.241   80:30946/TCP   63s
+```
