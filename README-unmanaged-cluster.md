@@ -213,7 +213,7 @@ tanzu unmanaged-cluster delete my-cluster
 
 ## Deploy workloads
 
-### 1. Direct Image Deploy `kuard`
+### 1. Deploy Direct Image `kuard`
 
 ```shell
 kubectl run --restart=Never --image=gcr.io/kuar-demo/kuard-amd64:blue kuard
@@ -224,3 +224,15 @@ kubectl port-forward kuard 8080:8080
 ```
 
 Access to <http://localhost:8080>
+
+### 2. Deploy with Contour
+
+Configure Environments without support for LoadBalancer services for Docker
+
+```shell
+string trim '
+envoy:
+  service:
+    type: ClusterIP
+' > contour-values.yaml
+```
