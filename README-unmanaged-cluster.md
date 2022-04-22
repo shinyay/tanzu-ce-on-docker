@@ -389,9 +389,52 @@ data:
 ```
 
 ```shell
-kubectl apply -f metallb-config.yaml
+kubectl apply -f metallb-config.yml
 ```
 
-```
+```shell
 kubectl get pod -n metallb-system -o wide
+```
+
+Deploy Sample Deployment
+
+```shell
+string trim '
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-metallb
+  name: nginx-metallb
+spec:
+  selector:
+    matchLabels:
+      app: nginx-metallb
+  template:
+    metadata:
+      labels:
+        app: nginx-metallb
+    spec:
+      containers:
+      - image: nginx
+        name: nginx-metallb
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-metallb
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx-metallb
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80' > nginx-lb.yml
+```
+
+```shell
+kubectl apply -f nginx-lb.yml
 ```
