@@ -210,3 +210,17 @@ Delete the cluster
 ```shell
 tanzu unmanaged-cluster delete my-cluster
 ```
+
+## Deploy workloads
+
+### 1. Direct Image Deploy `kuard`
+
+```shell
+kubectl run --restart=Never --image=gcr.io/kuar-demo/kuard-amd64:blue kuard
+```
+
+```shell
+kubectl port-forward kuard 8080:8080
+```
+
+Access to <http://localhost:8080>
