@@ -369,3 +369,21 @@ kubectl get daemonsets -n metallb-system
 NAME      DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
 speaker   1         1         1       1            1           kubernetes.io/os=linux   93m
 ```
+
+Layer 2 Configuration
+
+```shell
+string trim '
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 192.168.1.240-192.168.1.250' > metallb-config.yaml
+```
