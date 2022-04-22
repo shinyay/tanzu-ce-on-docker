@@ -345,3 +345,10 @@ W0422 06:54:08.746327       1 ipset.go:113] ipset name truncated; [KUBE-6-LOAD-B
 W0422 06:54:08.746380       1 ipset.go:113] ipset name truncated; [KUBE-6-NODE-PORT-LOCAL-SCTP-HASH] -> [KUBE-6-NODE-PORT-LOCAL-SCTP-HAS]
 I0422 06:54:08.746759       1 server.go:649] Version: v1.22.4
 ```
+
+MetalLB Apply
+
+```shell
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.1/manifests/namespace.yaml
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.1/manifests/metallb.yaml
+```
