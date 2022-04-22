@@ -311,3 +311,9 @@ After
     mode: ipvs
     nodePortAddresses: null
 ```
+
+Apply kube-proxy mode
+
+```shell
+kubectl rollout restart daemonset kube-proxy -n kube-system
+```
