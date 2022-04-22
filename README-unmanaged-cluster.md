@@ -21,6 +21,13 @@ tanzu unmanaged-cluster create my-cluster
 <details>
 <summary>creating unmanaged-cluster</summary>
 
+<details>
+<summary>image</summary>
+
+![tce-unmanaged](https://user-images.githubusercontent.com/3072734/164588959-51b1bd10-e593-4a64-a6cb-be167b4656c8.gif)
+
+</details>
+
 ```shell
 📁 Created cluster directory
 
@@ -73,13 +80,6 @@ View running pods:
 Delete this cluster:
    tanzu unmanaged delete my-cluster
 ```
-
-<details>
-<summary>creating unmanaged-cluster</summary>
-
-![tce-unmanaged](https://user-images.githubusercontent.com/3072734/164588959-51b1bd10-e593-4a64-a6cb-be167b4656c8.gif)
-
-</details>
 
 </details>
 
