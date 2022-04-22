@@ -393,7 +393,7 @@ data:
     - name: default
       protocol: layer2
       addresses:
-      - 172.18.0.150-172.18.0.200' > metallb-config.yaml
+      - 172.18.0.150-172.18.0.200' > metallb-config.yml
 ```
 
 ```shell
