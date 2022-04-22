@@ -494,5 +494,15 @@ Confirm LoadBalancer
 kubectl get services
 
 NAME            TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)        AGE
-nginx-metallb   LoadBalancer   10.96.96.20   192.168.1.241   80:30946/TCP   63s
+nginx-metallb   LoadBalancer   10.96.11.217   172.18.0.152   80:30922/TCP   63s
+```
+
+Port Forwarding
+
+```shell
+kubectl port-forward service/nginx-metallb 8080:80
+```
+
+```shell
+curl http://localhost:8080 
 ```
