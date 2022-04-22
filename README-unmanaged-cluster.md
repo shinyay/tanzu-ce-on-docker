@@ -236,3 +236,10 @@ envoy:
     type: ClusterIP
 ' > contour-values.yaml
 ```
+
+Confirm available package list
+
+```shell
+tanzu package available list
+```
+
