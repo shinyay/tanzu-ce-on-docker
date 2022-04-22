@@ -268,3 +268,24 @@ spec:
     - name: nginx-example
       port: 80' > httpproxy.yml
 ```
+
+## Deploy MetalLB
+
+Confirm kube-proxy mode
+
+```shell
+kubectl get pods -n kube-system | grep kube-proxy
+kubectl logs kube-proxy-xxxxx -n kube-system
+```
+
+You can see `Using iptables Proxier`
+
+```shell
+I0422 02:29:53.377505       1 node.go:172] Successfully retrieved node IP: 172.18.0.2
+I0422 02:29:53.377609       1 server_others.go:140] Detected node IP 172.18.0.2
+I0422 02:29:53.396687       1 server_others.go:206] kube-proxy running in dual-stack mode, IPv4-primary
+I0422 02:29:53.396788       1 server_others.go:212] Using iptables Proxier.
+I0422 02:29:53.396807       1 server_others.go:219] creating dualStackProxier for iptables.
+W0422 02:29:53.396844       1 server_others.go:495] detect-local-mode set to ClusterCIDR, but no IPv6 cluster CIDR defined, , defaulting to no-op detect-local for IPv6
+I0422 02:29:53.397386       1 server.go:649] Version: v1.22.4
+```
