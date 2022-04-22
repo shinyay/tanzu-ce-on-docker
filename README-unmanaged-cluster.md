@@ -304,6 +304,11 @@ Before
     nodePortAddresses: null
 ```
 
+```yaml
+    ipvs:
+      strictARP: false
+```
+
 After
 
 ```yaml
@@ -312,8 +317,29 @@ After
     nodePortAddresses: null
 ```
 
+```yaml
+    ipvs:
+      strictARP: true
+```
+
 Apply kube-proxy mode
 
 ```shell
 kubectl rollout restart daemonset kube-proxy -n kube-system
+```
+
+Then logs again
+
+```shell
+I0422 06:54:08.701543       1 node.go:172] Successfully retrieved node IP: 172.18.0.2
+I0422 06:54:08.701612       1 server_others.go:140] Detected node IP 172.18.0.2
+I0422 06:54:08.743806       1 server_others.go:206] kube-proxy running in dual-stack mode, IPv4-primary
+I0422 06:54:08.743997       1 server_others.go:274] Using ipvs Proxier.
+I0422 06:54:08.744136       1 server_others.go:276] creating dualStackProxier for ipvs.
+W0422 06:54:08.744215       1 server_others.go:495] detect-local-mode set to ClusterCIDR, but no IPv6 cluster CIDR defined, , defaulting to no-op detect-local for IPv6
+I0422 06:54:08.745908       1 proxier.go:440] "IPVS scheduler not specified, use rr by default"
+I0422 06:54:08.746213       1 proxier.go:440] "IPVS scheduler not specified, use rr by default"
+W0422 06:54:08.746327       1 ipset.go:113] ipset name truncated; [KUBE-6-LOAD-BALANCER-SOURCE-CIDR] -> [KUBE-6-LOAD-BALANCER-SOURCE-CID]
+W0422 06:54:08.746380       1 ipset.go:113] ipset name truncated; [KUBE-6-NODE-PORT-LOCAL-SCTP-HASH] -> [KUBE-6-NODE-PORT-LOCAL-SCTP-HAS]
+I0422 06:54:08.746759       1 server.go:649] Version: v1.22.4
 ```
