@@ -352,3 +352,20 @@ MetalLB Apply
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.1/manifests/namespace.yaml
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.1/manifests/metallb.yaml
 ```
+
+Confirm MetalLB running
+
+```shell
+kubectl get pods -n metallb-system
+
+NAME                          READY   STATUS    RESTARTS   AGE
+controller-66445f859d-tjdg7   1/1     Running   0          93m
+speaker-r2dpf                 1/1     Running   0          93m
+```
+
+```shell
+kubectl get daemonsets -n metallb-system
+
+NAME      DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+speaker   1         1         1       1            1           kubernetes.io/os=linux   93m
+```
