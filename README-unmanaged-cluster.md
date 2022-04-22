@@ -289,3 +289,25 @@ I0422 02:29:53.396807       1 server_others.go:219] creating dualStackProxier fo
 W0422 02:29:53.396844       1 server_others.go:495] detect-local-mode set to ClusterCIDR, but no IPv6 cluster CIDR defined, , defaulting to no-op detect-local for IPv6
 I0422 02:29:53.397386       1 server.go:649] Version: v1.22.4
 ```
+
+Configure kube-proxy mode
+
+```shell
+kubectl edit configmaps kube-proxy -n kube-system
+```
+
+Before
+
+```yaml
+    metricsBindAddress: ""
+    mode: iptables
+    nodePortAddresses: null
+```
+
+After
+
+```yaml
+    metricsBindAddress: ""
+    mode: ipvs
+    nodePortAddresses: null
+```
