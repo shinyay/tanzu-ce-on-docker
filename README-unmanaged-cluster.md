@@ -372,6 +372,14 @@ speaker   1         1         1       1            1           kubernetes.io/os=
 
 Layer 2 Configuration
 
+IP Range should be **172.18.0.0/16**
+
+```shell
+docker inspect kind | jq '.[0].IPAM.Config[0].Subnet' -r
+
+172.18.0.0/16
+```
+
 ```shell
 string trim '
 apiVersion: v1
