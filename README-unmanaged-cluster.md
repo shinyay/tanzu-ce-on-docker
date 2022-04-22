@@ -271,6 +271,8 @@ spec:
 
 ## Deploy MetalLB
 
+- [MetalLB Installation](https://metallb.universe.tf/installation/)
+
 Confirm kube-proxy mode
 
 ```shell
