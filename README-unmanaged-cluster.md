@@ -249,3 +249,22 @@ Confirm available Contour version
  tanzu package available list contour.community.tanzu.vmware.com
 ```
 
+```shell
+string trim '
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: nginx-example-proxy
+  namespace: contour-example-workload
+  labels:
+    app: ingress
+spec:
+  virtualhost:
+    fqdn: nginx-example.projectcontour.io
+  routes:
+  - conditions:
+    - prefix: /
+    services:
+    - name: nginx-example
+      port: 80' > httpproxy.yml
+```
