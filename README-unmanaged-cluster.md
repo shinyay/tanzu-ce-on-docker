@@ -387,3 +387,11 @@ data:
       addresses:
       - 192.168.1.240-192.168.1.250' > metallb-config.yaml
 ```
+
+```shell
+kubectl apply -f metallb-config.yaml
+```
+
+```
+kubectl get pod -n metallb-system -o wide
+```
