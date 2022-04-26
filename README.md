@@ -13,6 +13,12 @@ There are two types of clusters
 - `Managed Clusters`
 - `Unmanaged Clusters`
 
+### Basic for Kubernetes Cluster
+
+#### Nodes
+
+#### Control plane
+
 ### Managed Cluster
 
 Managed clusters is a deployment model that features 1 management cluster and N workload cluster(s), which runs **Cluster-API**
