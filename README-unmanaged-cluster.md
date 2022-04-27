@@ -159,6 +159,8 @@ tanzu package available list {PACKAGE_NAME}
 tanzu package available list contour.community.tanzu.vmware.com
 ```
 
+> Contour is an open source Kubernetes Ingress controller that acts as a control plane for the Envoy edge and service proxy
+
 <details>
 <summary>listing repositories</summary>
 

@@ -13,6 +13,17 @@ There are two types of clusters
 - `Managed Clusters`
 - `Unmanaged Clusters`
 
+### Basic for Kubernetes Cluster
+
+- Nodes
+- Control Plane
+
+#### Nodes
+
+Kubernetes Cluster consists of a set of worker machines that run containerized worklads. The worker nodes host the **Pods** that are the component of the application workload.
+
+#### Control plane
+
 ### Managed Cluster
 
 Managed clusters is a deployment model that features 1 management cluster and N workload cluster(s), which runs **Cluster-API**
