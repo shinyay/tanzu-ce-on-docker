@@ -24,6 +24,8 @@ Kubernetes Cluster consists of a set of worker machines that run containerized w
 
 #### Control plane
 
+Control plane manages the worker nodes and the Pods in the cluster. IT will be often spread across multiple machines.
+
 ### Managed Cluster
 
 Managed clusters is a deployment model that features 1 management cluster and N workload cluster(s), which runs **Cluster-API**
