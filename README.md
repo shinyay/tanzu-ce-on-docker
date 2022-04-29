@@ -18,6 +18,8 @@ There are two types of clusters
 - Nodes
 - Control Plane
 
+![image](https://user-images.githubusercontent.com/3072734/166104473-0bbfcf0c-7b63-427a-bfa6-a95d700d7ec6.png)
+
 #### Nodes
 
 Kubernetes Cluster consists of a set of worker machines that run containerized worklads. The worker nodes host the **Pods** that are the component of the application workload.
