@@ -12,6 +12,8 @@ There are two types of clusters
 
 - `Managed Clusters`
 - `Unmanaged Clusters`
+- `Docker Extensions`
+  - [Documents](https://docs.docker.com/desktop/extensions/)
 
 ### Basic for Kubernetes Cluster
 
